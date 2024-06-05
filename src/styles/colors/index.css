@@ -1,0 +1,40 @@
+.page-background {
+  background-color: #DEE8ED;
+  min-height: 100vh;
+}
+    
+.header-color {
+  background-color: #475C92;
+}
+  
+.bg-transparent-color {
+  background-color: transparent;
+}
+
+.white-color {
+  color: #FFFFFF;
+}
+    
+.black-color {
+  color: #000000;
+}
+    
+.gray-color {
+  color: #928F8F;
+}
+
+.gray-light-color {
+  color: #ece9e9;
+}
+
+.blue-color {
+  color: #a25117;
+}
+
+.dark-gray-color {
+  color: #505050;
+}
+    
+.border-trasnparent {
+  border: 2px solid transparent;
+}

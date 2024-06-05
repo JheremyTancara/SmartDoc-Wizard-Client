@@ -1,0 +1,44 @@
+.text-1xl {
+  font-size: 3rem;
+}
+
+.text-2xl {
+  font-size: 2.3rem;
+}
+
+.size-text-4xl {
+  font-size: 2.15rem; 
+}
+
+.size-text-8xl {
+  font-size: 1.75rem;
+}
+
+.size-text-16xl {
+  font-size: 1.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-left {
+  justify-content: flex-start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.inline {
+  display: inline;
+  white-space: nowrap;
+}

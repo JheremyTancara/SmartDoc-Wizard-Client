@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.square {
+  width: 800px; 
+  background-color: white; 
+}
+
+.square1 {
+  height: 650px; 
+}
+
+.square2 {
+  height: 300px; 
+}
+
+.square3 {
+  height: 500px; 
+}
+
+.square4 {
+  height: 600px; 
+}

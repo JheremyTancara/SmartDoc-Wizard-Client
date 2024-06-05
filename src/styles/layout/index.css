@@ -1,0 +1,186 @@
+.flex {
+  display: flex;
+}
+  
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.max-h-screen {
+  max-width: 720px;
+}
+
+.max-h-box-text {
+  max-width: 530px;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.border-radius {
+  border-radius: 15px;
+}
+
+.border-radius-6 {
+  border-radius: 6px;
+}
+
+.padding-btn {
+  padding: 5px 12px;
+}
+
+.padding-btn {
+  padding: 5px 12px;
+}
+
+.padding-btn:hover {
+  background-color: #95A6D0;
+  border: 1px solid white; 
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.padding-box-text {
+  padding: 0px 15px;
+}
+
+.square-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra los cuadrados horizontalmente */
+  gap: 10px; /* Añade espacio entre los cuadrados */
+  max-width: 2100; /* Limita el ancho máximo para que no ocupen toda la pantalla */
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+}
+
+.square {
+  flex: 0 0 calc(30% - 20px); /* Tamaño relativo con margen */
+  max-width: calc(30% - 20px); /* Tamaño máximo para evitar desbordamientos */
+  width: 100%; /* Ajusta el ancho al 100% */
+  padding-top: 15.5%; /* Hace que la altura sea igual al ancho, creando un cuadrado */
+  background-color: white;
+  border-radius: 5%; /* Bordes redondeados al 10% */
+  box-sizing: border-box; /* Incluye padding y border en las dimensiones del cuadro */
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 83vh; /* Altura del contenedor igual a la altura de la ventana */
+}
+
+.rectangle {
+  background-color: transparent; /* Color de fondo negro */
+  width: 1800px; /* Ancho del rectángulo */
+  height: 780px; /* Altura del rectángulo */
+  margin: 20px auto; /* Centrar el rectángulo horizontalmente */
+  border-radius: 2%; /* Bordes redondeados al 10% */
+  border: 3px dashed black; /* Borde discontinuo blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.black-rectangle {
+  background-color: #505050; /* Color de fondo negro */
+  width: 1650px; /* Ancho del rectángulo */
+  height: 680px; /* Altura del rectángulo */
+  margin: 20px auto; /* Centrar el rectángulo horizontalmente */
+  border-radius: 4%; /* Bordes redondeados al 10% */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.combo-box {
+  width: 330px;
+  height: 55px;
+  background-color: #959595;
+  color: white; 
+  font-weight: 700;
+  border: 1px dashed white;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.container-label {
+  width: 270px;
+  height: 55px;
+  background-color: white;
+  font-weight: 700;
+  border: 2px dashed black;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.container-label-two {
+  width: 155px;
+  height: 55px;
+  background-color: white;
+  font-weight: 700;
+  border: 2px dashed black;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.btn-container {
+  width: 280px;
+  height: 60px;
+  background-color: #1D476D;
+  color: white; 
+  font-weight: 700;
+  border: 2px dashed rgb(255, 255, 255);
+  border-radius: 8px;
+  text-align: center;
+  padding: 5px;
+  font-size: 30px;
+}
+
+.box-text {
+  width: 220px;
+  height: 55px;
+  background-color: transparent;
+  color: white; 
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 20px;
+}
+
+.box-text-long {
+  width: 365px;
+  height: 55px;
+  background-color: white;
+  border: 2px dashed black;
+  color: black; 
+  font-weight: 550;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 15px;
+  max-width: 365px;
+  word-wrap: break-word;
+}
+
+.configurate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh; 
+  font-size: 4rem;
+  font-weight: 550;
+  color: rgb(49, 46, 46); 
+}

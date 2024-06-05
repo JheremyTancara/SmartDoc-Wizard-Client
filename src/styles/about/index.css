@@ -1,0 +1,54 @@
+.content-container {
+    padding: 2rem; /* Agregar espacio alrededor del contenido */
+    max-width: 1800px; /* Limitar el ancho máximo para una mejor lectura */
+    margin: 0 auto;
+    border-radius: 8px; /* Bordes redondeados */
+  }
+
+  .strong {
+    color: black;
+  }
+  
+  .content-container h1,
+  .content-container h2,
+  .content-container p,
+  .content-container ul {
+    margin-bottom: 1rem; /* Espacio inferior entre elementos */
+  }
+  
+  .content-container ul {
+    list-style-type: disc; /* Lista con viñetas */
+    padding-left: 1.5rem; /* Indentar lista */
+  }
+  
+  .text-2x1 {
+    font-size: 2.5rem;
+  }
+
+  .text-4x1 {
+    font-size: 1.3rem;
+  }
+
+  .text-3x1 {
+    font-size: 1.9rem;
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+
+  .dark-gray-color {
+    color: #505050;
+  }
+
+  .gray-color {
+    color: #696969;
+  }
+
+  .mt-1 {
+    margin-top: 1.0rem;
+  }
+
+  .mb-1 {
+    margin-bottom: 1.0rem;
+  }
