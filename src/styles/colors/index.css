@@ -4,11 +4,26 @@
 }
     
 .header-color {
-  background-color: #475C92;
+  background-color: #4AB2FE;
 }
   
 .bg-transparent-color {
   background-color: transparent;
+}
+
+.bg-btn-login-color {
+  background-color: #A9CAFC;
+  color: black;
+}
+
+.bg-btn-signup-color {
+  border: 2px solid black;
+  color: #989696
+}
+
+.bg-btn-user-color {
+  background-color: #ff7b7b;
+  color: black;
 }
 
 .white-color {

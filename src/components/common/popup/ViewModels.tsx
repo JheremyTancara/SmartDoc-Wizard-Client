@@ -14,13 +14,13 @@ const ViewModels: React.FC<ViewModelsProps> = ({ isOpen, toggleModal }) => {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={closeModal}>
+    <Modal isOpen={isOpen} onClose={closeModal} className={'overlay'} modal={'modal'} textClose={'X'} styleClose={'closeButton'}>
       <div className="image-container">
         <img src={img.first_model} width="200" height="170" className="mr-2 ml-1-5" />
         <p className="image-text">Primer Modelo</p>
       </div>
       <div className="image-container">
-        <img src={img.first_model} width="200" height="170" className="mr-2" />
+        <img src={img.second_model} width="200" height="170" className="mr-2" />
         <p className="image-text">Segundo Modelo</p>
       </div>
       <div className="image-container">

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../../styles/layout/index.css';
 
 interface ComboBoxProps {
@@ -7,16 +6,18 @@ interface ComboBoxProps {
   value: string;
   onChange: (value: string) => void;
   name: string;
+  tooltip?: string;
 }
 
-const ComboBox: React.FC<ComboBoxProps> = ({ options, value, onChange, name}) => {
+const ComboBox: React.FC<ComboBoxProps> = ({ options, value, onChange, name, tooltip }) => {
   return (
     <select 
       value={value} 
       onChange={(e) => onChange(e.target.value)} 
       className="combo-box"
+      title={tooltip}
     >
-      <option value="" disabled>{name}</option>
+      <option value="" disabled hidden>{name}</option>
       {options.map((option, index) => (
         <option key={index} value={option}>
           {option}

@@ -9,8 +9,8 @@ import data_manager from './../assets/functions/data_manager.png'
 import logo_smartdoc from './../assets/icons/logo_smartdoc.png'
 import menu from './../assets/icons/menu.png'
 import user from './../assets/icons/user.png'
-import first_model from './../assets/models/first_model.jpg'
-
+import first_model from './../assets/models/first_model.png'
+import second_model from './../assets/models/second_model.png'
 
 
 export default {
@@ -18,6 +18,7 @@ export default {
   "menu": menu,
   "user": user,
   "first_model": first_model,
+  "second_model": second_model,
   "automation_doc": automation_doc,
   "view_model": view_model,
   "format_conv": format_conv,

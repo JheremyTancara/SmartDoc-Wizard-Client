@@ -1,6 +1,8 @@
 import React, { useState, ChangeEvent } from "react";
 import mammoth from "mammoth";
-import { PDFDocument, StandardFonts } from "pdf-lib";
+import { PDFDocument } from "pdf-lib";
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
 
 const DocxToPdfConverter: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -26,39 +28,38 @@ const DocxToPdfConverter: React.FC = () => {
       reader.onload = async (event) => {
         const docxData = event.target?.result as ArrayBuffer;
         const result = await mammoth.convertToHtml({ arrayBuffer: docxData });
-        const html = result.value; // Obtener el valor de la conversión
+        const html = result.value;
+
+        const container = document.createElement('div');
+        container.innerHTML = html;
+        document.body.appendChild(container);
+
+        const canvas = await html2canvas(container);
+        const imageData = canvas.toDataURL('image/png');
 
         const pdfDoc = await PDFDocument.create();
-        const page = pdfDoc.addPage();
-        const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
-        page.setFont(helveticaFont);
-
-        page.drawText(html, {
-          x: 50,
-          y: page.getHeight() - 50,
-          size: 12,
+        const page = pdfDoc.addPage([canvas.width, canvas.height]);
+        const image = await pdfDoc.embedPng(imageData);
+        page.drawImage(image, {
+          x: 0,
+          y: 0,
+          width: canvas.width,
+          height: canvas.height,
         });
+
+        document.body.removeChild(container);
 
         const pdfBytes = await pdfDoc.save();
         const pdfBlob = new Blob([pdfBytes], { type: "application/pdf" });
-        const pdfUrl = URL.createObjectURL(pdfBlob);
-
-        const downloadLink = document.createElement("a");
-        downloadLink.href = pdfUrl;
-        downloadLink.download = `${file.name.replace(/\.[^/.]+$/, "")}.pdf`;
-        downloadLink.click();
+        saveAs(pdfBlob, `${file.name.replace(/\.[^/.]+$/, "")}.pdf`);
 
         setLoading(false);
       };
 
       reader.readAsArrayBuffer(file);
-    } catch (error: any) { // Aquí se asegura de que 'error' sea de tipo 'any'
+    } catch (error: any) {
       console.error("Error al convertir el documento:", error);
-      if (error instanceof Error) { // Comprobación de tipo
-        alert("Error durante la conversión: " + error.message);
-      } else {
-        alert("Error durante la conversión: " + String(error)); // Convertir 'error' a cadena si no es una instancia de 'Error'
-      }
+      alert("Error durante la conversión: " + error.message);
       setLoading(false);
     }
   };

@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Navigate, useNavigate } from 'react-router-dom'; 
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import ViewModels from '../../../common/popup/ViewModels';
 import FormatConversion from '../../../common/popup/FormatConversion';
-import img from '../../../../assets/img_link'
+import img from '../../../../assets/img_link';
 import '../../../../styles/layout/index.css';
 import '../../../../styles/paddings/index.css';
 
-
 const Square: React.FC = () => {
-
   const [isModelOpen, setIsModel] = useState(false);
   const [isFormatConvOpen, setIsFormatConv] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+  const [isLoggedAdministrator, setIsLoggedAdministrator] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedStatus = localStorage.getItem('isLogged') === 'true';
+    const loggedAdminStatus = localStorage.getItem('isLoggedAdministrator') === 'true';
+    setIsLogged(loggedStatus);
+    setIsLoggedAdministrator(loggedAdminStatus);
+  }, []);
 
   const toggleModal = () => {
     setIsModel(!isModelOpen);
@@ -24,10 +33,24 @@ const Square: React.FC = () => {
     console.log('hola');
   };
 
-  const navigate = useNavigate();
-
   const clickGenerateDocument = () => {
     navigate('/generate-document');
+  };
+
+  const clickDocHistory = () => {
+    if (isLogged) {
+      navigate('/doc-history');
+    } else {
+      alert('Tienes que estar logueado para acceder al historial de documentos.');
+    }
+  };
+
+  const clickManagerData = () => {
+    if (isLogged && isLoggedAdministrator) {
+      navigate('/data-manager');
+    } else {
+      alert('Tienes que estar logueado y ser administrador para acceder al gestor de datos.');
+    }
   };
 
   return (
@@ -49,7 +72,7 @@ const Square: React.FC = () => {
           <div className="mt-negative-box"> 
             <img src={img.view_model} width="130" height="130" className="ml-2"/>
             <button className="bg-transparent-color size-text-8xl font-bold black-color padding-btn border-radius ml-1-5" onClick={toggleModal}>
-              Visialización de Plantillas
+              Visualización de Plantillas
             </button>
             {isModelOpen && <ViewModels isOpen={isModelOpen} toggleModal={toggleModal} />}
             <h1 className="size-text-16xl font-bold gray-color justify-text max-h-box-text ml-2">
@@ -57,7 +80,7 @@ const Square: React.FC = () => {
             </h1>
           </div>
         </div>
-         
+
         <div className="square">
           <div className="mt-negative-box"> 
             <img src={img.format_conv} width="130" height="130" className="ml-2"/>
@@ -66,7 +89,8 @@ const Square: React.FC = () => {
             </button>
             {isFormatConvOpen && <FormatConversion isOpen={isFormatConvOpen} toggleModal={toggleFormatConv} />}
             <h1 className="size-text-16xl font-bold gray-color justify-text max-h-box-text ml-2">
-              Facilita la conversión de documentos entre diferentes formatos, como de Word a PDF.            </h1>
+              Facilita la conversión de documentos entre diferentes formatos, como de Word a PDF.
+            </h1>
           </div>
         </div>
 
@@ -74,17 +98,18 @@ const Square: React.FC = () => {
           <div className="mt-negative-box"> 
             <img src={img.doc_customization} width="130" height="130" className="ml-2"/>
             <button className="bg-transparent-color size-text-8xl font-bold black-color padding-btn border-radius ml-1-5" onClick={handleClick}>
-              Personalización de documentos
+              Personalización de Documentos
             </button>
             <h1 className="size-text-16xl font-bold gray-color justify-text max-h-box-text ml-2">
-              Ajusta el diseño y formato de los documentos, incluyendo fuentes, colores, y disposición de elementos, para adaptarse a tus necesidades.            </h1>
+              Ajusta el diseño y formato de los documentos, incluyendo fuentes, colores, y disposición de elementos, para adaptarse a tus necesidades.
+            </h1>
           </div>
         </div>
 
         <div className="square">
           <div className="mt-negative-box"> 
             <img src={img.doc_history} width="130" height="130" className="ml-2"/>
-            <button className="bg-transparent-color size-text-8xl font-bold black-color padding-btn border-radius ml-1-5" onClick={handleClick}>
+            <button className="bg-transparent-color size-text-8xl font-bold black-color padding-btn border-radius ml-1-5" onClick={clickDocHistory}>
               Historial de Documentos 
             </button>
             <h1 className="size-text-16xl font-bold gray-color justify-text max-h-box-text ml-2">
@@ -96,7 +121,7 @@ const Square: React.FC = () => {
         <div className="square">
           <div className="mt-negative-box"> 
             <img src={img.data_manager} width="130" height="130" className="ml-2"/>
-            <button className="bg-transparent-color size-text-8xl font-bold black-color padding-btn border-radius ml-1-5" onClick={handleClick}>
+            <button className="bg-transparent-color size-text-8xl font-bold black-color padding-btn border-radius ml-1-5" onClick={clickManagerData}>
               Gestor de Datos
             </button>
             <h1 className="size-text-16xl font-bold gray-color justify-text max-h-box-text ml-2">
@@ -107,6 +132,6 @@ const Square: React.FC = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Square;

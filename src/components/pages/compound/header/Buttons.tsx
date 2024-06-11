@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import img from '../../../../assets/img_link';
+import OptAccount from '../../../common/popup/OptAccount';
+import OptAdministrator from '../../../common/popup/OptAdministrator';
+import OptUser from '../../../common/popup/OptUser';
 
 const Buttons: React.FC = () => {
   const navigate = useNavigate();
+
+  const [openAccount, setOpenAccount] = useState(false);
+  const [openAdministrator, setOpenAdministrator] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    const loggedStatus = localStorage.getItem('isLogged');
+    setIsLogged(loggedStatus === 'true');
+  }, []);
 
   const handleButtonNavigateAboutOf = () => {
     navigate('/about-of');
@@ -22,9 +34,17 @@ const Buttons: React.FC = () => {
   };
 
   const handleButtonClickAccount = () => {
+    if (!openAccount) {
+      setOpenAdministrator(false);
+    }
+    setOpenAccount(!openAccount);
   };
 
   const handleButtonClickAdministrator = () => {
+    if (!openAdministrator) {
+      setOpenAccount(false);
+    }
+    setOpenAdministrator(!openAdministrator);
   };
 
   const btnClassName = 'bg-transparent-color font-bold padding-btn border-radius inline';
@@ -50,13 +70,27 @@ const Buttons: React.FC = () => {
       </button>
       
       <img src={img.user} width="30" height="25" className="inline ml-10"/>
-      <button className={`${btnClassName} ${whiteColor} mr-1`} onClick={handleButtonClickAccount}>
-        MI CUENTA
-      </button>
+      {isLogged ? (
+        <>
+          <button className={`${btnClassName} ${whiteColor} mr-1`} onClick={handleButtonClickAccount} disabled={openAdministrator}>
+            MI CUENTA
+          </button>
+          {openAccount && <OptUser isOpen={openAccount} toggleModal={handleButtonClickAccount} />}
+        </>
+      ) : (
+        <>
+          <button className={`${btnClassName} ${whiteColor} mr-1`} onClick={handleButtonClickAccount} disabled={openAdministrator}>
+            MI CUENTA
+          </button>
+          {openAccount && <OptAccount isOpen={openAccount} toggleModal={handleButtonClickAccount} />}
+        </>
+      )}
+      
       <h1 className={`${btnClassName} ${grayLightColor} mt-02 mr-1`}>|</h1>
-      <button className={`${btnClassName} ${grayLightColor}`} onClick={handleButtonClickAdministrator}>
+      <button className={`${btnClassName} ${grayLightColor}`} onClick={handleButtonClickAdministrator} disabled={openAccount}>
         ENTRAR COMO ADMINISTRADOR
       </button>
+      {openAdministrator && <OptAdministrator isOpen={openAdministrator} toggleModal={handleButtonClickAdministrator} />}
     </div>
   );
 }

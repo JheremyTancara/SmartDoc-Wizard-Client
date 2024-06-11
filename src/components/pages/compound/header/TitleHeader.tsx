@@ -6,7 +6,7 @@ const TitleHeader: React.FC = () => {
     <div>
       <header>
         <div className="flex header-color justify-center py-6">
-          <img src={img.logo_smartdoc} width="80" height="80" className="inline mr-2 mt-1"/>
+          <img src={img.logo_smartdoc} width="100" height="100" className="inline mr-2 mt-1"/>
           <h1 className="text-2xl font-bold white-color text-center inline mt-2">Automatización y Redaccion de Documentos</h1>
         </div>
         <div className="flex header-color">

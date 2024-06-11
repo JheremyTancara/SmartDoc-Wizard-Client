@@ -1,47 +1,174 @@
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    width: 71%; 
-    max-width: 1900px; 
-    height: auto;  
-    max-height: 1080px; 
-    overflow-y: auto;
-  }
-  
-  .closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .image-text {
-    margin-top: 10px;
-    padding-right: 35px;
-    text-align: center;
-    font-weight: 550;
-    font-size: 18px;
-    color: black; 
-  }
+.overlay-account {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 3.5rem;
+  background-color: transparent;
+  display: flex;
+  justify-content: right;
+}
+
+.overlay-administrator {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-top: 3.5rem;
+  background-color: transparent;
+  display: flex;
+  justify-content: right;
+}
+
+.modal {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 71%; 
+  max-width: 1900px; 
+  height: auto;  
+  max-height: 1080px; 
+  overflow-y: auto;
+}
+
+.modal-signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  width: 25%; 
+  max-width: 1900px; 
+  height: auto;  
+  max-height: 1080px; 
+  overflow-y: auto;
+}
+
+.modal-btn { 
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: absolute;
+  width: 45%; 
+  max-width: 1900px; 
+  height: 45%;  
+  max-height: 1080px; 
+}
+
+.modal-account {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 15px;
+  border-radius: 3px;
+  position: relative;
+  width: 17.3%; 
+  height: 140px;  
+  overflow-y: auto;
+}
+
+.modal-user {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 15px;
+  border-radius: 3px;
+  position: relative;
+  width: 17.3%; 
+  height: 100px;  
+  overflow-y: auto;
+}
+
+.modal-administrator {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 15px;
+  border-radius: 3px;
+  position: relative;
+  width: 285px; 
+  height: 80px;  
+  overflow-y: auto;
+}
+
+
+.closeButton {
+  position: absolute;
+  color: rgb(150, 46, 46);
+  top: 10px;
+  right: 10px;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.image-text {
+  margin-top: 10px;
+  padding-right: 35px;
+  text-align: center;
+  font-weight: 550;
+  font-size: 18px;
+  color: black; 
+}
+
+.image-account {
+  margin-top: 2px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: black; 
+}
+
+.button-account {
+  border-radius: 10%; /* Botón circular */
+  text-align: center; /* Centrar el texto */
+  font-size: 13px; /* Tamaño del texto */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  height: 38px;
+  width: 250px; /* Hacer que el botón ocupe todo el ancho disponible */
+}
+
+.tooltip-container {
+  top: 0px;
+  display: inline-block;
+}
+
+.tooltip-container .tooltip-text {
+  visibility: hidden;
+  background-color: black;
+  color: white;
+  text-align: left;
+  border: 1px dotted white;
+  border-radius: 4px;
+  padding: 2px;
+  width: 310px;
+  position: absolute;
+  margin-left: -90px;
+  opacity: 25;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+}

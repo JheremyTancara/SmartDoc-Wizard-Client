@@ -13,9 +13,8 @@ const FormatConversion: React.FC<FormatConversionProps> = ({ isOpen, toggleModal
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={closeModal}>
+    <Modal isOpen={isOpen} onClose={closeModal} className={'overlay'} modal={'modal'} textClose={'X'} styleClose={'closeButton'}>
         <DocxToPdfConverter />
-
     </Modal>
   );
 };
