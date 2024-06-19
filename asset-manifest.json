@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/SmartDoc-Wizard-Client/static/css/main.438fc725.css",
+    "main.js": "/SmartDoc-Wizard-Client/static/js/main.882f9786.js",
+    "static/media/logo_smartdoc.png": "/SmartDoc-Wizard-Client/static/media/logo_smartdoc.03b64553b0e54b3ec491.png",
+    "static/media/second_model.png": "/SmartDoc-Wizard-Client/static/media/second_model.be0e1bc94501bc683d73.png",
+    "static/media/first_img_company.png": "/SmartDoc-Wizard-Client/static/media/first_img_company.5048c702706544df404e.png",
+    "static/media/first_model.png": "/SmartDoc-Wizard-Client/static/media/first_model.e94675ff1623d784b6a4.png",
+    "static/media/view_model.png": "/SmartDoc-Wizard-Client/static/media/view_model.a0d24ff4e5103f0bcdd6.png",
+    "static/media/data_manager.png": "/SmartDoc-Wizard-Client/static/media/data_manager.459f36a4579d0d099c65.png",
+    "static/media/menu.png": "/SmartDoc-Wizard-Client/static/media/menu.a8c3b903fbae799c3493.png",
+    "static/media/automation_doc.png": "/SmartDoc-Wizard-Client/static/media/automation_doc.abfd1ea9954a325d4e57.png",
+    "static/media/doc_history.png": "/SmartDoc-Wizard-Client/static/media/doc_history.762e60a84704bb91c47e.png",
+    "static/media/doc_customization.png": "/SmartDoc-Wizard-Client/static/media/doc_customization.d65e08288a932c97797d.png",
+    "static/media/format_conv.png": "/SmartDoc-Wizard-Client/static/media/format_conv.b72fd1bad2ae2404578e.png",
+    "static/media/second_img_company.png": "/SmartDoc-Wizard-Client/static/media/second_img_company.f3ceb68acc3e032d7d1a.png",
+    "static/media/hiddenEyeIcon.png": "/SmartDoc-Wizard-Client/static/media/hiddenEyeIcon.c7f8e402956d123190a7.png",
+    "static/media/user.png": "/SmartDoc-Wizard-Client/static/media/user.b926af4a69ab5d000e35.png",
+    "static/media/eyeIcon.png": "/SmartDoc-Wizard-Client/static/media/eyeIcon.a47bf8263d9253b15243.png",
+    "index.html": "/SmartDoc-Wizard-Client/index.html",
+    "main.438fc725.css.map": "/SmartDoc-Wizard-Client/static/css/main.438fc725.css.map",
+    "main.882f9786.js.map": "/SmartDoc-Wizard-Client/static/js/main.882f9786.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.438fc725.css",
+    "static/js/main.882f9786.js"
+  ]
+}
