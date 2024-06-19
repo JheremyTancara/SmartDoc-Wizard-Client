@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/SmartDoc-Wizard-Client/static/css/main.438fc725.css",
-    "main.js": "/SmartDoc-Wizard-Client/static/js/main.882f9786.js",
+    "main.js": "/SmartDoc-Wizard-Client/static/js/main.b95f8323.js",
     "static/media/logo_smartdoc.png": "/SmartDoc-Wizard-Client/static/media/logo_smartdoc.03b64553b0e54b3ec491.png",
     "static/media/second_model.png": "/SmartDoc-Wizard-Client/static/media/second_model.be0e1bc94501bc683d73.png",
     "static/media/first_img_company.png": "/SmartDoc-Wizard-Client/static/media/first_img_company.5048c702706544df404e.png",
@@ -19,10 +19,10 @@
     "static/media/eyeIcon.png": "/SmartDoc-Wizard-Client/static/media/eyeIcon.a47bf8263d9253b15243.png",
     "index.html": "/SmartDoc-Wizard-Client/index.html",
     "main.438fc725.css.map": "/SmartDoc-Wizard-Client/static/css/main.438fc725.css.map",
-    "main.882f9786.js.map": "/SmartDoc-Wizard-Client/static/js/main.882f9786.js.map"
+    "main.b95f8323.js.map": "/SmartDoc-Wizard-Client/static/js/main.b95f8323.js.map"
   },
   "entrypoints": [
     "static/css/main.438fc725.css",
-    "static/js/main.882f9786.js"
+    "static/js/main.b95f8323.js"
   ]
 }
